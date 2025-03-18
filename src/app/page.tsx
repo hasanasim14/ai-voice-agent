@@ -9,9 +9,10 @@ import {
   Car,
   PenToolIcon as Tool,
   Clock,
-  Truck,
   Mic,
   ChevronDown,
+  Feather,
+  Brain,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,7 +25,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-export default function AutoZoneHomepage() {
+export default function WhispAIHomepage() {
   const [chatStep, setChatStep] = useState<"closed" | "name" | "voice">(
     "closed"
   );
@@ -59,7 +60,7 @@ export default function AutoZoneHomepage() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Car className="h-6 w-6 text-[#D63E1A]" />
-            <span className="text-2xl font-bold text-[#D63E1A]">AutoZone</span>
+            <span className="text-2xl font-bold text-[#D63E1A]">Whisp AI</span>
           </div>
         </div>
       </header>
@@ -69,85 +70,39 @@ export default function AutoZoneHomepage() {
         <div className="container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-2xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Get the Right Parts.
-              <span className="text-[#D63E1A] block mt-2">Right Now.</span>
+              Your Voice.
+              <span className="text-[#D63E1A] block mt-2">Your Command.</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-300 mt-4">
-              Free Next Day Delivery on Eligible Orders
+              Instant Responses. Effortless Control.
             </p>
 
             <div className="relative mt-8">
               <div className="flex max-w-md mx-auto">
                 <Input
                   type="text"
-                  placeholder="Enter vehicle or part number"
+                  placeholder="Search your heart's desires"
                   className="rounded-r-none h-12 bg-white/10 backdrop-blur-sm border-slate-700 text-white placeholder:text-slate-400 pr-4 focus-visible:ring-primary"
                 />
-                <Button size="lg" className="rounded-l-none h-12 bg-[#D63E1A]">
+                <Button
+                  size="lg"
+                  className="rounded-l-none h-12 cursor-pointer bg-[#D63E1A] hover:[#A62F14]"
+                >
                   <Search className="mr-2 h-4 w-4" />
                   Search
                 </Button>
               </div>
               <div className="mt-2 flex gap-2 text-sm text-slate-300 justify-center">
                 <span className="flex items-center">
-                  <Clock className="mr-1 h-3 w-3" />
-                  Quick delivery
+                  <Mic className="mr-1 h-3 w-3" />
+                  Voice Commands
                 </span>
                 <span className="flex items-center">
-                  <Tool className="mr-1 h-3 w-3" />
-                  Genuine parts
+                  <Brain className="mr-1 h-3 w-3" />
+                  Smart Responses
                 </span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
-            Why Choose AutoZone?
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card>
-              <CardContent className="pt-6">
-                <div className="rounded-full bg-[#D63E1A]/10 p-3 w-12 h-12 flex items-center justify-center mb-4">
-                  <Truck className="h-6 w-6 text-[#D63E1A]" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Fast Delivery</h3>
-                <p className="text-muted-foreground">
-                  Free next-day delivery on thousands of parts and accessories.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="pt-6">
-                <div className="rounded-full bg-[#D63E1A]/10 p-3 w-12 h-12 flex items-center justify-center mb-4">
-                  <Tool className="h-6 w-6 text-[#D63E1A]" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Quality Parts</h3>
-                <p className="text-muted-foreground">
-                  Genuine OEM and high-quality aftermarket parts for all
-                  vehicles.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="pt-6">
-                <div className="rounded-full bg-[#D63E1A]/10 p-3 w-12 h-12 flex items-center justify-center mb-4">
-                  <MessageCircle className="h-6 w-6 text-[#D63E1A]" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Expert Support</h3>
-                <p className="text-muted-foreground">
-                  Get help from our team of automotive experts anytime you need
-                  it.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
@@ -156,8 +111,8 @@ export default function AutoZoneHomepage() {
       <div className="fixed bottom-8 right-8 z-40">
         <Button
           size="lg"
-          className="rounded-full shadow-lg cursor-pointer bg-[#D63E1A]"
           onClick={handleStartChat}
+          className="rounded-full shadow-lg cursor-pointer bg-[#D63E1A] hover:bg-[#A62F14]"
         >
           <MessageCircle className="mr-2 h-5 w-5" />
           Talk to an Agent!
